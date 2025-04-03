@@ -1,0 +1,51 @@
+{
+  "name": "marscolony-tokenmeta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node build/tests/getData.test.js",
+    "dev": "ts-node src/index.ts",
+    "start": "ts-node src/index.ts",
+    "build": "tsc --project tsconfig.json",
+    "build-test": "tsc src/tests/getData.test.ts --outDir build --resolveJsonModule --esModuleInterop && npm run test",
+    "db:generate": "drizzle-kit generate:sqlite",
+    "db:migrate": "ts-node src/services/holders/db/migrate.ts",
+    "clean": "rm -rf build drizzle sqlite.db",
+    "monitor-mc": "ts-node src/scripts/monitor-mc-supply.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crystalbit/marscolony-tokenmeta.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crystalbit/marscolony-tokenmeta/issues"
+  },
+  "homepage": "https://github.com/crystalbit/marscolony-tokenmeta#readme",
+  "dependencies": {
+    "@download/blockies": "https://github.com/qwtel/blockies",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "axios": "^1.8.1",
+    "better-sqlite3": "^11.8.1",
+    "canvas": "^3.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "drizzle-kit": "^0.19.13",
+    "drizzle-orm": "^0.28.5",
+    "envalid": "^7.3.1",
+    "express": "^4.17.1",
+    "git": "^0.1.5",
+    "node-cron": "^3.0.3",
+    "web3": "^1.6.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.12",
+    "@types/node": "^16.7.10",
+    "@types/node-cron": "^3.0.11",
+    "ts-node": "^10.8.2",
+    "typescript": "^5.0.4"
+  }
+}
